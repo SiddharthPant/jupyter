@@ -9,6 +9,6 @@ cd $HOME
 
 find $LOG_DIR/ -type f -name '*.log' -mtime +30 -exec rm {} \;
 
-# source .bashrc
-source $ANACONDA/activate fastai > $LOGFILE 2>&1
-$ANACONDA/jupyter notebook >> $LOGFILE 2>&1 &
+export PATH=$ANACONDA:$PATH
+source activate fastai > $LOGFILE 2>&1
+jupyter notebook >> $LOGFILE 2>&1 &
